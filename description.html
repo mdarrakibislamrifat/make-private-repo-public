@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Description</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <main>
+        <!-- Var let const -->
+        <div>
+            
+            <div class="text-xl">
+                <h1 class="text-4xl font-semibold">Scope Of var:</h1>
+                <p>1.Variables declared with var are in the function scope.</p>
+                <p>2.In the var tab, when you will run the code, you will see an error as a is not defined because var
+                    variables are only accessible in the function scope.</p>
+                <p>3.In the var tab, when you run the code, you will see there is no error and that we can declare var
+                    variables after defining them.</p>
+                <p>4.In the var tab, when you run the code, you will see that there is no error as we allowed to declare
+                    the same variable again</p>
+            </div>
+            <div class="text-xl">
+                <h1 class="text-4xl font font-semibold">Scope of Let:</h1>
+                <p>1.Variables declared as let are in the block scope.</p>
+                <p>2.In the let tab, when you run the code, you will see an error as i is not defined because let
+                    variables are only accessible within the block they are declared.</p>
+                <p>3.In the let tab, when you run the code, you will get an error as let variables do not support
+                    hoisting.</p>
+                <p>4.In the var and let tab, when you run the code, you will see that there is no error and we can
+                    define new values to the var and let variables.</p>
+            </div>
+            <div class="text-xl">
+                <h1 class="text-4xl font-semibold">Scope of Const:</h1>
+                <p>1.Variables declared as const are in the block scope.</p>
+                <p>2.In the const tab, when you run the code, you will see that x was defined under the block was
+                    accessible, but when you try to access x outside that block, you will get an error.</p>
+                <p>3.In the const tab, when you run the code, you will get an error as const variables do not support
+                    hoisting</p>
+                <p>4.In the const tab, when you run the code, you will get an error as a const variables value cannot be
+                    reassigned.</p>
+            </div>
+        </div>
+        <br>
+        <hr>
+<!-- null and undefined -->
+<div class="text-xl">
+    <h1 class="text-4xl font font-semibold">Null and Undefined</h1>
+    <p>Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value. The typeof() operator returns undefined for an undefined variable. The typeof() operator returns the type as an object for a variable whose value is assigned as null.</p>
+</div>
+<br>
+<hr>
+<div class="text-xl">
+    <h1 class="text-4xl font-semibold">Rest api</h1>
+    <p>REST API stands for Representational State Transfer Application Programming Interface. It is a set of architectural principles and constraints that are commonly used in web development to design networked applications. REST APIs are used to enable communication between different software systems over the internet.</p>
+    
+</div>
+
+
+    </main>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

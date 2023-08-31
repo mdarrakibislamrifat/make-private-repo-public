@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Programming Hero Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    
+    <!-- Navbar Section -->
+    <header>
+        <div class="mt-5  container mx-auto flex flex-wrap lg:justify-between">
+            <img src="Logo.png" alt="">
+            <button class="btn btn-ghost">Sort by view</button>
+             <button onclick="description()" class="btn btn-secondary">Blog</button>
+             
+        </div>
+        <br>
+        <hr>
+
+    </header>
+    <main>
+         <!-- tab bar -->
+       
+         <div class="tab-container w-full ">
+            <div class="tabs tabs p-5 w-96 m-auto text-center flex justify-center font-extrabold" id="category-container" >
+
+            </div>
+         </div>
+    </main>
+    <script src="index.js"></script>
 </body>
+
 </html>
