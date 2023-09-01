@@ -1,9 +1,7 @@
 const apiLoad = async () => {
   const response = await fetch('https://openapi.programming-hero.com/api/videos/categories')
   const data = await response.json();
-  // if(data==''){
-
-  // }
+ 
   
 
   const categoryContainer = document.getElementById('category-container');
@@ -21,10 +19,29 @@ const apiLoad = async () => {
 const handleLoadData = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
   const data = await response.json();
+ 
 
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML=" ";
+  const drawingContainer=document.getElementById('drawing-container');
+  if(categoryId==1005){
+    
+    const p=document.createElement('p');
+    p.className=" mx-auto gap-5 flex text-center items-center justify-center"
+    p.innerHTML=`
+    
+          <img class="items-center" src="Icon.png" alt="">
+          <h1 class="text-4xl font-bold">Oops!! Sorry, There is no content here</h1>
 
+       
+    `
+    drawingContainer.innerHTML=''
+    drawingContainer.appendChild(p)
+    
+    
+  }else{
+    console.log('')
+  }
   data.data.forEach((card) => {
     card.authors.map(profile=>{
      
@@ -61,7 +78,10 @@ const handleLoadData = async (categoryId) => {
                 </div>
              
     `;
-    cardContainer.appendChild(div)
+    drawingContainer.innerHTML=''
+    cardContainer.appendChild(div);
+    
+    
   })
   })
 
