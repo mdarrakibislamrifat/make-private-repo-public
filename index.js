@@ -61,7 +61,7 @@ const handleLoadData = async (categoryId) => {
                 <figure class="h-60  object-cover" >
                 <img class="w-96 h-60"  src=${card?.thumbnail?card.thumbnail:' '} alt="Shoes" />
                 <div>
-                 <p  class="absolute mr-6 bottom-0 right-0
+                 <p  class="absolute p-2 mr-6 bottom-0 right-0
                  rounded-md font-semibold bg-[#171717] text-white">
                  ${`${hours?hours+' Hours':''}  
                  
