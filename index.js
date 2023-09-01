@@ -18,31 +18,32 @@ const handleLoadData = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
   const data = await response.json();
 
-  const cardContainer = document.getElementById('card-container')
+  const cardContainer = document.getElementById('card-container');
+  cardContainer.innerHTML=" "
   data.data.forEach((card) => {
     console.log(card.authors)
     const div = document.createElement('div');
-    div.classList = "card h-96 bg-gray-100 shadow-xl";
-    
-    
+    div.classList = "card  bg-gray-100 shadow-xl";
+
     div.innerHTML = `
    
-                <figure><img src=${card?.thumbnail} alt="Shoes" /></figure>
+                
+                <figure><img src=${card?.thumbnail} alt="Shoes" />
+                </figure>
+                
                 <div class="card-body">
                   <h2 class="card-title">${card.title}</h2>
                   <div class="flex">
                   <img src=${card?.profile_picture} />
                   <p>${card?.profile_name}</p>
-                  <p>${card.authors.verified}</p>
                     
-                    
+                    <p>${card.verified}</p>
                   </div>
                   <p>Views :${card?.others?.views}</p>
                   
                 </div>
              
     `;
-    
     cardContainer.appendChild(div)
   })
 
