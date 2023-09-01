@@ -46,7 +46,16 @@ const handleLoadData = async (categoryId) => {
   }
   data.data.forEach((card) => {
     card.authors.map(profile => {
+      const date=parseFloat(card.others.posted_date);
+      let time=card.others.posted_date.length;
+      
+      
 
+      let hours=parseInt(date/3600);
+      
+      let sec=date%3600;
+      let min=parseInt(sec/60)
+  
       const div = document.createElement('div');
       div.classList = "card p-5 bg-gray-100 shadow-xl";
 
@@ -56,12 +65,16 @@ const handleLoadData = async (categoryId) => {
                 
                 <div class="relative">
 
-                <figure class="h-60 object-cover" ><img  src=${card?.thumbnail?card.thumbnail:' '} alt="Shoes" />
-                <div class="absolute bottom-0 right-0
+                <figure class="h-60  object-cover" >
+                <img class="w-96 h-60"  src=${card?.thumbnail?card.thumbnail:' '} alt="Shoes" />
+                <div>
+                 <p  class="absolute mr-6 bottom-0 right-0
                  rounded-md font-semibold bg-[#171717] text-white">
-                <p>
-                   ${card.others.posted_date?card.others.posted_date:' '}
-                </p>
+                 ${`${hours?hours:''}hours 
+                 
+                 ${min?min:''}min`}
+                 
+              </p>
                 </div>
 
                 </figure>
@@ -72,8 +85,9 @@ const handleLoadData = async (categoryId) => {
                 <div class="card-body">
                   <h2 class="card-title">${card.title}</h2>
 
-                  <div class="flex justify-items-center">
-                 <img class="rounded-full w-14 h-14" src=${profile.profile_picture}/>
+                  <div class="flex justify-center">
+                 <div><img class="rounded-full w-14 h-14" src=${profile.profile_picture}/>
+                 </div>
 
                   <p class="text-xl font-normal mt-2 ml-3">${profile.profile_name}</p>
                   
@@ -97,6 +111,8 @@ const handleLoadData = async (categoryId) => {
 
     })
   })
+  
+
 
 }
 apiLoad();
